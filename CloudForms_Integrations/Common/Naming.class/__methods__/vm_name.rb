@@ -46,11 +46,11 @@ TAG_CONTROL_VALUE_PREFIX = 'Classification::'
 #   The number of digits (e.g. 01, 02, 03 = 2 AND 001, 002, 003 = 3) to be placed at the end of ORDERED_NAMING_VALUES
 #
 ORDERED_NAMING_VALUES = {
-  :application => :sn_application,                                                        # 1 - application being provisioned
-  :environment => :sn_environment,                                                        # 2 - environment provisioning to
+  :city => :wm_city,                                                                      # 1 - city being provisioned
+  :location => :wm_location,                                                              # 2 - location provisioning to
   :platform    => ($evm.root['miq_provision'].source.platform.first.downcase rescue nil), # 3 - first character from template platform
-  :location    => :sn_location,                                                           # 4 - the form factor of the system
-  :form_factor => :sn_form_factor                                                         # 5 - form factor
+  :environment    => :wm_environment,                                                     # 4 - environment
+  :type => :wm_type                                                                       # 5 - type
 }.freeze
 NAMING_DIGITS         = 3
 
@@ -58,7 +58,7 @@ NAMING_DIGITS         = 3
 # Optional, set non critical values and their defaults if missing
 #
 NON_CRITICAL_VALUES   = {
-  :environment => 'n'
+  :location => 'n'
 }
 
 #
