@@ -1,9 +1,6 @@
 #
 # Description: Creates System Name based on dialog user inputs.
 #
-# Author:      : Dustin Scott, Red Hat
-# Creation Date: 9-June-2017
-#
 # NOTES:
 #   - Number of integers to use for Series is set via the NAMING_DIGITS constant
 #
@@ -48,11 +45,11 @@ TAG_CONTROL_VALUE_PREFIX = 'Classification::'
 ORDERED_NAMING_VALUES = {
   :city => :wm_city,                                                                      # 1 - city being provisioned
   :location => :wm_location,                                                              # 2 - location provisioning to
-  #:platform    => ($evm.root['miq_provision'].source.platform.first.downcase rescue nil), # 3 - first character from template platform
+  #:platform    => ($evm.root['miq_provision'].source.platform.first.downcase rescue nil),# 3 - first character from template platform
   :environment    => :wm_environment,                                                     # 4 - environment
   :type => :wm_type                                                                       # 5 - type
 }.freeze
-NAMING_DIGITS         = 3
+NAMING_DIGITS         = 3                                                                 # Post digits, 2 for windows, 3 for linux
 
 #
 # Optional, set non critical values and their defaults if missing
